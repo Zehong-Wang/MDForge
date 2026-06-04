@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+.ruff_cache/
+build/
+dist/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# external data is cloned, not vendored (keep the docs + fetch script).
+# Use data/* (not data/) so the negations below can re-include files;
+# a bare data/ excludes the dir and git won't descend to re-include.
+data/*
+!data/README.md
+!data/fetch.sh
+
+# local Layer-3 work directories (large MD artifacts)
+runs/
+mdforge_layer3/
+
+# MD execution conda env (Python + AmberTools + OpenMM), created by the user
+pipeline/
+
+# Secrets
+.env
+.env.*
+
+# Paper LaTeX source is kept in its own repo, not the code repo
+paper/

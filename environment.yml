@@ -1,0 +1,31 @@
+# Conda environment for MDForge's MD execution backend — the `pipeline/` env
+# that runs the agent-written simulation code. This is the simulation engine,
+# NOT the environment you run the agent itself in (that one is `pip install -e`).
+#
+# Create it under the repo root, where the code looks for it by default:
+#     conda env create -p ./pipeline -f environment.yml
+#     # or simply: bash scripts/setup_pipeline.sh
+#
+# To put it elsewhere: create at any prefix and set PRISM_PIPELINE=/path/to/env.
+#
+# Provides Python + AmberTools (antechamber, tleap, parmchk2, sqm, sander),
+# OpenMM (CUDA), the OpenFF stack, and free-energy analysis (pymbar, alchemlyb)
+# that the generated pipelines invoke. Pins mirror a known-good environment.
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - ambertools=24
+  - openmm=8.4
+  - openmmtools=0.26
+  - openmmforcefields=0.15
+  - openff-toolkit=0.18
+  - openff-interchange=0.5
+  - parmed=4.3
+  - mdtraj=1.11
+  - pymbar=4.2
+  - alchemlyb=2.5
+  - rdkit=2025.3
+  - numpy=2
+  - scipy=1.17
+  - pyyaml=6
